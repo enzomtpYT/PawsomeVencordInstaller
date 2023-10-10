@@ -67,7 +67,7 @@ func main() {
 		g.Update()
 	}()
 
-	win = g.NewMasterWindow("Vencord Installer", 1200, 800, 0)
+	win = g.NewMasterWindow("Vencord(Plus) Installer", 1200, 800, 0)
 
 	icon, _, err := image.Decode(bytes.NewReader(iconBytes))
 	if err != nil {
