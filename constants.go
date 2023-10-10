@@ -13,9 +13,9 @@ import "image/color"
 var InstallerGitHash = "Unknown"
 var InstallerTag = "Unknown"
 
-const ReleaseUrl = "https://api.github.com/repos/Vendicated/Vencord/releases/latest"
+const ReleaseUrl = "https://api.github.com/repos/StupidityDB/Bencord/releases/latest"
 const ReleaseUrlFallback = "https://vencord.dev/releases/vencord"
-const InstallerReleaseUrl = "https://api.github.com/repos/Vencord/Installer/releases/latest"
+const InstallerReleaseUrl = "https://api.github.com/repos/StupidityDB/BencordInstaller/releases/latest"
 const InstallerReleaseUrlFallback = "https://vencord.dev/releases/installer"
 
 var UserAgent = "VencordInstaller/" + InstallerGitHash + " (https://github.com/Vencord/Installer)"
