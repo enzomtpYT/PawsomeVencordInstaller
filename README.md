@@ -1,6 +1,6 @@
-# Vencord Installer
+# Vencord+ Installer
 
-The Vencord Installer allows you to install [Vencord, the cutest Discord Desktop client mod](https://github.com/Vendicated/Vencord)
+The Vencord Installer allows you to install [Vencord+, the best Discord Desktop client mod](https://github.com/StupidityDB/VencordPlus)
 
 ![image](https://user-images.githubusercontent.com/45497981/226734476-5fb42420-844d-4e27-ae06-4799118e086e.png)
 
@@ -11,14 +11,14 @@ The Vencord Installer allows you to install [Vencord, the cutest Discord Desktop
 > **Warning**
 **Do not** run the installer as Admin
 
-Download [VencordInstaller.exe](https://github.com/Vencord/Installer/releases/latest/download/VencordInstaller.exe) and run it
+Download [VencordInstaller.exe](https://github.com/StupidityDB/VencordPlusInstaller/releases/latest/download/VencordInstaller.exe) and run it
 
 If the above doesn't work/open, for example because you're using Windows 7, 32 bit, or have a bad GPU, you can instead use our terminal based installer.
 
 To do so, open Powershell, run the following command, then follow along with the instructions/prompts
 
 ```ps1
-iwr "https://raw.githubusercontent.com/Vencord/Installer/main/install.ps1" -UseBasicParsing | iex
+iwr "https://raw.githubusercontent.com/StupidityDB/VencordPlusInstaller/main/install.ps1" -UseBasicParsing | iex
 ```
 
 ### Linux
@@ -26,12 +26,12 @@ iwr "https://raw.githubusercontent.com/Vencord/Installer/main/install.ps1" -UseB
 Run the following command in your terminal and follow along with the instructions/prompts
 
 ```sh
-sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
+sh -c "$(curl -sS https://raw.githubusercontent.com/StupidityDB/VencordPlusInstaller/main/install.sh)"
 ```
 
 ### MacOs
 
-Download the latest [MacOs build](https://github.com/Vencord/Installer/releases/latest/download/VencordInstaller.MacOS.zip), unzip it, and run `VencordInstaller.app` 
+Download the latest [MacOs build](https://github.com/StupidityDB/VencordPlusInstaller/releases/latest/download/VencordInstaller.MacOS.zip), unzip it, and run `VencordInstaller.app` 
 
 If you get a `VencordInstaller can't be opened` warning, right-click `VencordInstaller.app` and click open.
 
