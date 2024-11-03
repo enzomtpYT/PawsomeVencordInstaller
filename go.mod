@@ -1,4 +1,4 @@
-module github.com/Vendicated/VencordInstaller
+module github.com/enzomtpYT/VencordOverpowahInstaller
 
 go 1.19
 
