@@ -1,5 +1,5 @@
-$DOWNLOAD_CLI = "https://github.com/enzomtpYT/VencordOverpowahInstaller/releases/latest/download/VencordInstallerCli.exe"
-$DOWNLOAD_GUI = "https://github.com/enzomtpYT/VencordOverpowahInstaller/releases/latest/download/VencordInstaller.exe"
+$DOWNLOAD_CLI = "https://github.com/enzomtpYT/PawsomeVencordInstaller/releases/latest/download/VencordInstallerCli.exe"
+$DOWNLOAD_GUI = "https://github.com/enzomtpYT/PawsomeVencordInstaller/releases/latest/download/VencordInstaller.exe"
 
 if ([Environment]::Is64BitOperatingSystem -and [System.Environment]::OSVersion.Version.Major -ge 10) {
 	Write-Output "=============================="

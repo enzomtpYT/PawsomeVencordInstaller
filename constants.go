@@ -13,9 +13,9 @@ import "image/color"
 var InstallerGitHash = "Unknown"
 var InstallerTag = "Unknown"
 
-const ReleaseUrl = "https://api.github.com/repos/enzomtpYT/VencordOverpowah/releases/latest"
+const ReleaseUrl = "https://api.github.com/repos/enzomtpYT/PawsomeVencord/releases/latest"
 const ReleaseUrlFallback = "https://vencord.dev/releases/vencord"
-const InstallerReleaseUrl = "https://api.github.com/repos/enzomtpYT/VencordOverpowahInstaller/releases/latest"
+const InstallerReleaseUrl = "https://api.github.com/repos/enzomtpYT/PawsomeVencordInstaller/releases/latest"
 const InstallerReleaseUrlFallback = "https://vencord.dev/releases/installer"
 
 var UserAgent = "VencordInstaller/" + InstallerGitHash + " (https://github.com/Vencord/Installer)"

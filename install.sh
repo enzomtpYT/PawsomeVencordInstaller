@@ -21,7 +21,7 @@ else
   set -- "$@" "XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR" "WAYLAND_DISPLAY=$XDG_RUNTIME_DIR/$WAYLAND_DISPLAY"
 fi
 
-curl -sS https://github.com/enzomtpYT/VencordOverpowahInstaller/releases/latest/download/VencordInstaller-$kind \
+curl -sS https://github.com/enzomtpYT/PawsomeVencordInstaller/releases/latest/download/VencordInstaller-$kind \
   --output "$outfile" \
   --location
 
