@@ -213,6 +213,6 @@ jobs:
           prerelease: false
           draft: false
           files: |
-            linux/VencordInstalle*
+            linux/PawsomeVencordInstalle*
             macos/PawsomeVencordInstaller.MacOS.zip
-            windows/VencordInstalle*.exe
+            windows/PawsomeVencordInstalle*.exe
