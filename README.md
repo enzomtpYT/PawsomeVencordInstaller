@@ -1,6 +1,6 @@
 # PawesomeVencord Installer
 
-The Vencord Installer allows you to install [PawesomeVencord, the best Discord Desktop client mod](https://github.com/enzomtpYT/PawsomeVencord)
+This Vencord Installer allows you to install [PawesomeVencord, a modification of the best Discord Desktop client mod](https://github.com/enzomtpYT/PawsomeVencord)
 
 ![image](https://user-images.githubusercontent.com/45497981/226734476-5fb42420-844d-4e27-ae06-4799118e086e.png)
 
