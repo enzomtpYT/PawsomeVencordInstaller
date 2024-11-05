@@ -1,4 +1,4 @@
-module github.com/enzomtpYT/VencordOverpowahInstaller
+module github.com/enzomtpYT/PawsomeVencord
 
 go 1.19
 

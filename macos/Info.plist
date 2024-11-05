@@ -3,7 +3,7 @@
 <plist version="1.0">
     <dict>
         <key>CFBundleExecutable</key>
-        <string>VencordInstaller</string>
+        <string>PawsomeVencordInstaller</string>
 
         <key>CFBundleIconFile</key>
         <string>icon.icns</string>

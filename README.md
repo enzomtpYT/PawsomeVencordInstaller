@@ -11,7 +11,7 @@ The Vencord Installer allows you to install [PawesomeVencord, the best Discord D
 > **Warning**
 **Do not** run the installer as Admin
 
-Download [VencordInstaller.exe](https://github.com/enzomtpYT/PawsomeVencordInstaller/releases/latest/download/VencordInstaller.exe) and run it
+Download [PawsomeVencordInstaller.exe](https://github.com/enzomtpYT/PawsomeVencordInstaller/releases/latest/download/PawsomeVencordInstaller.exe) and run it
 
 If the above doesn't work/open, for example because you're using Windows 7, 32 bit, or have a bad GPU, you can instead use our terminal based installer.
 
@@ -31,9 +31,9 @@ sh -c "$(curl -sS https://raw.githubusercontent.com/enzomtpYT/PawsomeVencordInst
 
 ### MacOs
 
-Download the latest [MacOs build](https://github.com/enzomtpYT/PawsomeVencordInstaller/releases/latest/download/VencordInstaller.MacOS.zip), unzip it, and run `VencordInstaller.app` 
+Download the latest [MacOs build](https://github.com/enzomtpYT/PawsomeVencordInstaller/releases/latest/download/PawsomeVencordInstaller.MacOS.zip), unzip it, and run `PawsomeVencordInstaller.app` 
 
-If you get a `VencordInstaller can't be opened` warning, right-click `VencordInstaller.app` and click open.
+If you get a `PawsomeVencordInstaller can't be opened` warning, right-click `PawsomeVencordInstaller.app` and click open.
 
 This warning shows because the app isn't signed since I'm not willing to pay 100 bucks a year for an Apple Developer license.
 
