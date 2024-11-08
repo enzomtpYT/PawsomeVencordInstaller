@@ -23,6 +23,9 @@ iwr "https://raw.githubusercontent.com/enzomtpYT/PawsomeVencordInstaller/main/in
 
 ### Linux
 
+## PLEASE MAKE SURE YOU HAVE ANY OTHER VERSION OF VENCORD REMOVED BEFORE INSTALLING PAWESOME, IT CAN CAUSE SOFT CRASHES, IF YOUR DISCORD DOESNT START REINSTALL IT THEN INSTALL PAWESOME AGAIN
+(this is unconfirmed as it has only happened once so far, but I put it here incase you get the issue)
+
 Run the following command in your terminal and follow along with the instructions/prompts
 
 ```sh
