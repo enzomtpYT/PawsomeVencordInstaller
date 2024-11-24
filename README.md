@@ -1,6 +1,6 @@
-# PawesomeVencord Installer
+# PawsomeVencord Installer
 
-This Vencord Installer allows you to install [PawesomeVencord, a modification of the best Discord Desktop client mod](https://github.com/enzomtpYT/PawsomeVencord)
+This Vencord Installer allows you to install [PawsomeVencord, a modification of the best Discord Desktop client mod](https://github.com/enzomtpYT/PawsomeVencord)
 
 ![image](https://user-images.githubusercontent.com/45497981/226734476-5fb42420-844d-4e27-ae06-4799118e086e.png)
 
@@ -23,7 +23,7 @@ iwr "https://raw.githubusercontent.com/enzomtpYT/PawsomeVencordInstaller/main/in
 
 ### Linux
 
-**PLEASE MAKE SURE YOU HAVE ANY OTHER VERSION OF VENCORD REMOVED BEFORE INSTALLING PAWESOME, IT CAN CAUSE SOFT CRASHES, IF YOUR DISCORD DOESNT START REINSTALL IT THEN INSTALL PAWESOME AGAIN**
+**PLEASE MAKE SURE YOU HAVE ANY OTHER VERSION OF VENCORD REMOVED BEFORE INSTALLING PAWSOME, IT CAN CAUSE SOFT CRASHES, IF YOUR DISCORD DOESNT START REINSTALL IT THEN INSTALL PAWSOME AGAIN**
 (this is unconfirmed as it has only happened once so far, but I put it here incase you get the issue)
 
 Run the following command in your terminal and follow along with the instructions/prompts
