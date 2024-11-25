@@ -377,7 +377,7 @@ func renderInstaller() g.Widget {
 			renderErrorCard(
 				DiscordYellow,
 				"PawsomeVencord is a fork of vencord, meaning this isn't the original version created by vendicated.\n"+ // 144
-					"If you wish to download the original version of vencord, go to vencord.dev or github.com/vencord/Installer.\nThis fork's purpose is to add custom plugins.",
+					"If you wish to download the original version of vencord, go to vencord.dev or github.com/vencord/Installer.\nThis fork's purpose is to add custom plugins and other silly additions.",
 				90,
 			),
 		),
@@ -398,7 +398,7 @@ func renderInstaller() g.Widget {
 				//goland:noinspection GoDeprecation
 				text := strings.Title(d.branch) + " - " + d.path
 				if d.isPatched {
-					text += " [PATCHED]"
+					text += " [PAWED]"
 				}
 				return g.RadioButton(text, radioIdx == i).
 					OnChange(makeRadioOnChange(i))
