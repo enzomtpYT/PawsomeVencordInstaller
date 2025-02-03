@@ -269,7 +269,7 @@ func renderFilesDirErr() g.Widget {
 	return g.Layout{
 		g.Dummy(0, 50),
 		g.Style().
-			SetColor(g.StyleColorText, DiscordRed).
+			SetColor(g.StyleColorText, PawsomeRed).
 			SetFontSize(30).
 			To(
 				g.Align(g.AlignCenter).To(
@@ -487,7 +487,7 @@ func renderInstaller() g.Widget {
 						Tooltip("Reinstall & Update PawsomeVencord"),
 					),
 				g.Style().
-					SetColor(g.StyleColorButton, DiscordRed).
+					SetColor(g.StyleColorButton, PawsomeRed).
 					To(
 						g.Button("Uninstall").
 							OnClick(handleUnpatch).
@@ -495,7 +495,7 @@ func renderInstaller() g.Widget {
 						Tooltip("Unpatch the selected Discord Install"),
 					),
 				g.Style().
-					SetColor(g.StyleColorButton, Ternary(isOpenAsar, DiscordRed, DiscordGreen)).
+					SetColor(g.StyleColorButton, Ternary(isOpenAsar, PawsomeRed, DiscordGreen)).
 					To(
 						g.Button(Ternary(isOpenAsar, "Uninstall OpenAsar", Ternary(currentDiscord != nil, "Install OpenAsar", "(Un-)Install OpenAsar"))).
 							OnClick(handleOpenAsar).
@@ -597,13 +597,13 @@ func loop() {
 						}
 						return g.Label("Latest PawsomeVencord Version: " + LatestHash)
 					}, func() g.Widget {
-						return renderErrorCard(DiscordRed, "Failed to fetch Info from GitHub: "+GithubError.Error(), 40)
+						return renderErrorCard(PawsomeRed, "Failed to fetch Info from GitHub: "+GithubError.Error(), 40)
 					},
 				},
 				&CondWidget{
 					IsInstallerOutdated,
 					func() g.Widget {
-						return renderErrorCard(DiscordYellow, "This Installer is outdated!"+GetInstallerDownloadMarkdown(), 40)
+						return renderErrorCard(PawsomeINFO, "This Installer is outdated!"+GetInstallerDownloadMarkdown(), 40)
 					},
 					nil,
 				},

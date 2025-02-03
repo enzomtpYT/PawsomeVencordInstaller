@@ -25,7 +25,8 @@ var (
 	DiscordRed    = color.RGBA{R: 0xEC, G: 0x41, B: 0x44, A: 0xFF}
 	DiscordBlue   = color.RGBA{R: 0x58, G: 0x65, B: 0xF2, A: 0xFF}
 	DiscordYellow = color.RGBA{R: 0xfe, G: 0xe7, B: 0x5c, A: 0xff}
-	PawsomeINFO = color.RGBA{R: 0xc2, G: 0x7f, B: 0xbe, A: 0xff} // first color test, could look horrible tbh
+	PawsomeINFO = color.RGBA{R: 0xc2, G: 0x7f, B: 0xbe, A: 0xff}
+	PawsomeRed = color.RGBA{R: 0xFF, G: 0x74, B: 0x81, A: 0xFF}
 )
 
 var LinuxDiscordNames = []string{
