@@ -469,7 +469,7 @@ func renderInstaller() g.Widget {
 						Tooltip("Patch the selected Discord Install"),
 					),
 				g.Style().
-					SetColor(g.StyleColorButton, DiscordBlue).
+					SetColor(g.StyleColorButton, PawsomeBlue).
 					SetDisabled(GithubError != nil).
 					To(
 						g.Button("Reinstall / Repair").
@@ -575,7 +575,7 @@ func loop() {
 				g.Row(
 					g.Label(Ternary(IsDevInstall, "Dev Install: ", "Files will be downloaded to: ")+FilesDir),
 					g.Style().
-						SetColor(g.StyleColorButton, DiscordBlue).
+						SetColor(g.StyleColorButton, PawsomeBlue).
 						SetStyle(g.StyleVarFramePadding, 4, 4).
 						To(
 							g.Button("Open Directory").OnClick(func() {
