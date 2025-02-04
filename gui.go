@@ -460,7 +460,7 @@ func renderInstaller() g.Widget {
 		g.Style().SetFontSize(20).To(
 			g.Row(
 				g.Style().
-					SetColor(g.StyleColorButton, DiscordGreen).
+					SetColor(g.StyleColorButton, PawsomeInstall).
 					SetDisabled(GithubError != nil).
 					To(
 						g.Button("Install").
@@ -495,7 +495,7 @@ func renderInstaller() g.Widget {
 						Tooltip("Unpatch the selected Discord Install"),
 					),
 				g.Style().
-					SetColor(g.StyleColorButton, Ternary(isOpenAsar, PawsomeRed, DiscordGreen)).
+					SetColor(g.StyleColorButton, Ternary(isOpenAsar, PawsomeRed, PawsomeGreen)).
 					To(
 						g.Button(Ternary(isOpenAsar, "Uninstall OpenAsar", Ternary(currentDiscord != nil, "Install OpenAsar", "(Un-)Install OpenAsar"))).
 							OnClick(handleOpenAsar).
