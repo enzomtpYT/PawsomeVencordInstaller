@@ -539,7 +539,7 @@ func renderErrorCard(col color.Color, message string, height float32) g.Widget {
 				Size(g.Auto, height).
 				Layout(
 					g.Row(
-						g.Style().SetColor(g.StyleColorText, color.Black).To(
+						g.Style().SetColor(g.StyleColorText, color.White).To(
 							g.Markdown(&message),
 						),
 					),
