@@ -21,11 +21,11 @@ const InstallerReleaseUrlFallback = "https://vencord.dev/releases/installer"
 var UserAgent = "PawsomeVencordInstaller/" + InstallerGitHash + " (https://github.com/Vencord/Installer)"
 
 var (
-	DiscordGreen  = color.RGBA{R: 0x2D, G: 0x7C, B: 0x46, A: 0xFF}
-	DiscordRed    = color.RGBA{R: 0xEC, G: 0x41, B: 0x44, A: 0xFF}
 	DiscordBlue   = color.RGBA{R: 0x58, G: 0x65, B: 0xF2, A: 0xFF}
-	DiscordYellow = color.RGBA{R: 0xfe, G: 0xe7, B: 0x5c, A: 0xff}
-	PawsomeINFO = color.RGBA{R: 0xc2, G: 0x7f, B: 0xbe, A: 0xff} // first color test, could look horrible tbh
+	PawsomeINFO = color.RGBA{R: 0x6f, G: 0x3e, B: 0x6d, A: 0xff}
+	PawsomeRed = color.RGBA{R: 0x74, G: 0x03, B: 0x00, A: 0xFF}
+	PawsomeInstall = color.RGBA{R: 0xa9, G: 0x80, B: 0xbb, A: 0xFF}
+	PawsomeGreen = color.RGBA{R: 0x00, G: 0x55, B: 0x09, A: 0xFF}
 )
 
 var LinuxDiscordNames = []string{
