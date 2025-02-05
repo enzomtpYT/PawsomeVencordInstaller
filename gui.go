@@ -376,7 +376,7 @@ func renderInstaller() g.Widget {
 		g.Style().SetFontSize(20).To(
 			renderErrorCard(
 				PawsomeINFO,
-				"PawsomeVencord is a fork of vencord, meaning this isn't the original version created by vendicated.\n"+ // 144
+				"PawsomeVencord is a fork of vencord, meaning this isn't the original version created by Vendicated.\n"+ // 144
 					"If you wish to download the original version of vencord, go to vencord.dev or github.com/vencord/Installer.\nThis fork's purpose is to add custom plugins and other silly additions.",
 				90,
 			),
