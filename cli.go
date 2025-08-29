@@ -48,9 +48,9 @@ func main() {
 	var helpFlag = flag.Bool("help", false, "View usage instructions")
 	var versionFlag = flag.Bool("version", false, "View the program version")
 	var updateSelfFlag = flag.Bool("update-self", false, "Update me to the latest version")
-	var installFlag = flag.Bool("install", false, "Install Equicord")
-	var updateFlag = flag.Bool("repair", false, "Repair Equicord")
-	var uninstallFlag = flag.Bool("uninstall", false, "Uninstall Equicord")
+	var installFlag = flag.Bool("install", false, "Install PawsomeVencord")
+	var updateFlag = flag.Bool("repair", false, "Repair PawsomeVencord")
+	var uninstallFlag = flag.Bool("uninstall", false, "Uninstall PawsomeVencord")
 	var installOpenAsarFlag = flag.Bool("install-openasar", false, "Install OpenAsar")
 	var uninstallOpenAsarFlag = flag.Bool("uninstall-openasar", false, "Uninstall OpenAsar")
 	var locationFlag = flag.String("location", "", "The location of the Discord install to modify")
@@ -63,7 +63,7 @@ func main() {
 	}
 
 	if *versionFlag {
-		fmt.Println("Equilotl Cli", buildinfo.InstallerTag, "("+buildinfo.InstallerGitHash+")")
+		fmt.Println("PawsomeVencordInstaller Cli", buildinfo.InstallerTag, "("+buildinfo.InstallerGitHash+")")
 		fmt.Println("Copyright (C) 2025 Vendicated and Vencord contributors")
 		fmt.Println("License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.")
 		return
@@ -103,18 +103,18 @@ func main() {
 			<-SelfUpdateCheckDoneChan
 			if IsSelfOutdated {
 				Log.Warn("Your installer is outdated.")
-				Log.Warn("To update, select the 'Update Equilotl' option to update, or run with --update-self")
+				Log.Warn("To update, select the 'Update PawsomeVencordInstaller' option to update, or run with --update-self")
 			}
 		}()
 
 		choices := []string{
-			"Install Equicord",
-			"Repair Equicord",
-			"Uninstall Equicord",
+			"Install PawsomeVencord",
+			"Repair PawsomeVencord",
+			"Uninstall PawsomeVencord",
 			"Install OpenAsar",
 			"Uninstall OpenAsar",
 			"View Help Menu",
-			"Update Equilotl",
+			"Update PawsomeVencordInstaller",
 			"Quit",
 		}
 		_, choice, err := (&promptui.Select{
@@ -129,7 +129,7 @@ func main() {
 			return
 		case "Quit":
 			return
-		case "Update Equilotl":
+		case "Update PawsomeVencordInstaller":
 			if err := UpdateSelf(); err != nil {
 				Log.Error("Failed to update self:", err)
 				exitFailure()
@@ -147,7 +147,7 @@ func main() {
 	} else if uninstall {
 		errSilent = PromptDiscord("unpatch", *locationFlag, *branchFlag).unpatch()
 	} else if update {
-		Log.Info("Downloading latest Equicord files...")
+		Log.Info("Downloading latest PawsomeVencord files...")
 		err := installLatestBuilds()
 		Log.Info("Done!")
 		if err == nil {
@@ -277,5 +277,5 @@ func HandleScuffedInstall() {
 	fmt.Println("Hold On!")
 	fmt.Println("You have a broken Discord Install.")
 	fmt.Println("Please reinstall Discord before proceeding!")
-	fmt.Println("Otherwise, Equicord will likely not work.")
+	fmt.Println("Otherwise, PawsomeVencord will likely not work.")
 }

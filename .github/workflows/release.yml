@@ -43,22 +43,22 @@ jobs:
         run: go get -v
 
       - name: Build GUI
-        run: CGO_ENABLED=1 GOOS=linux GOARCH=amd64 go build -v -tags "static gui" -ldflags "-s -w -X 'vencord/buildinfo.InstallerGitHash=$(git rev-parse --short HEAD)' -X 'vencord/buildinfo.InstallerTag=${{ github.ref_name }}'" -o Equilotl-x11
+        run: CGO_ENABLED=1 GOOS=linux GOARCH=amd64 go build -v -tags "static gui" -ldflags "-s -w -X 'vencord/buildinfo.InstallerGitHash=$(git rev-parse --short HEAD)' -X 'vencord/buildinfo.InstallerTag=${{ github.ref_name }}'" -o PawsomeVencordInstaller-x11
 
       - name: Build CLI
-        run: CGO_ENABLED=1 GOOS=linux GOARCH=amd64 go build -v -tags "cli" -ldflags "-s -w -X 'vencord/buildinfo.InstallerGitHash=$(git rev-parse --short HEAD)' -X 'vencord/buildinfo.InstallerTag=${{ github.ref_name }}'" -o EquilotlCli-linux
+        run: CGO_ENABLED=1 GOOS=linux GOARCH=amd64 go build -v -tags "cli" -ldflags "-s -w -X 'vencord/buildinfo.InstallerGitHash=$(git rev-parse --short HEAD)' -X 'vencord/buildinfo.InstallerTag=${{ github.ref_name }}'" -o PawsomeVencordInstallerCli-linux
 
       - name: Update executable
         run: |
-          chmod +x Equilotl*
+          chmod +x PawsomeVencordInstaller*
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Equilotl-linux
+          name: PawsomeVencordInstaller-linux
           path: |
-            Equilotl-x11
-            EquilotlCli-linux
+            PawsomeVencordInstaller-x11
+            PawsomeVencordInstallerCli-linux
 
 
   build-mac:
@@ -94,27 +94,27 @@ jobs:
         run: go get -v
 
       - name: Build GUI
-        run: CGO_CFLAGS="-mmacosx-version-min=10.15" CGO_LDFLAGS="-mmacosx-version-min=10.15" CGO_ENABLED=1 GOOS=darwin GOARCH=amd64 go build -v -tags "static gui" -ldflags "-s -w -X 'vencord/buildinfo.InstallerGitHash=$(git rev-parse --short HEAD)' -X 'vencord/buildinfo.InstallerTag=${{ github.ref_name }}'" -o Equilotl
+        run: CGO_CFLAGS="-mmacosx-version-min=10.15" CGO_LDFLAGS="-mmacosx-version-min=10.15" CGO_ENABLED=1 GOOS=darwin GOARCH=amd64 go build -v -tags "static gui" -ldflags "-s -w -X 'vencord/buildinfo.InstallerGitHash=$(git rev-parse --short HEAD)' -X 'vencord/buildinfo.InstallerTag=${{ github.ref_name }}'" -o PawsomeVencordInstaller
 
       - name: Update executable
         run: |
-          chmod +x Equilotl*
+          chmod +x PawsomeVencordInstaller*
 
       - name: Generate MacOS GUI bundle
         run: |
-          mkdir -p Equilotl.app/Contents/MacOS
-          mkdir -p Equilotl.app/Contents/Resources
-          cp macos/Info.plist Equilotl.app/Contents/Info.plist
-          mv Equilotl Equilotl.app/Contents/MacOS/Equilotl
-          cp macos/icon.icns Equilotl.app/Contents/Resources/icon.icns
-          zip -r Equilotl.MacOS.zip Equilotl.app
+          mkdir -p PawsomeVencordInstaller.app/Contents/MacOS
+          mkdir -p PawsomeVencordInstaller.app/Contents/Resources
+          cp macos/Info.plist PawsomeVencordInstaller.app/Contents/Info.plist
+          mv PawsomeVencordInstaller PawsomeVencordInstaller.app/Contents/MacOS/PawsomeVencordInstaller
+          cp macos/icon.icns PawsomeVencordInstaller.app/Contents/Resources/icon.icns
+          zip -r PawsomeVencordInstaller.MacOS.zip PawsomeVencordInstaller.app
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Equilotl-macos
+          name: PawsomeVencordInstaller-macos
           path: |
-            Equilotl.MacOS.zip
+            PawsomeVencordInstaller.MacOS.zip
 
 
   build-windows:
@@ -162,22 +162,22 @@ jobs:
           export GOROOT=/mingw64/lib/go
           export GOPATH=/mingw64
           go-winres make --product-version "git-tag"
-          CGO_ENABLED=1 GOOS=windows GOARCH=amd64 go build -v -tags "static gui" -ldflags "-s -w -H=windowsgui -extldflags=-static -X 'vencord/buildinfo.InstallerGitHash=$(git rev-parse --short HEAD)' -X 'vencord/buildinfo.InstallerTag=${{ github.ref_name }}'" -o Equilotl.exe
+          CGO_ENABLED=1 GOOS=windows GOARCH=amd64 go build -v -tags "static gui" -ldflags "-s -w -H=windowsgui -extldflags=-static -X 'vencord/buildinfo.InstallerGitHash=$(git rev-parse --short HEAD)' -X 'vencord/buildinfo.InstallerTag=${{ github.ref_name }}'" -o PawsomeVencordInstaller.exe
 
       - name: Build CLI
         shell: msys2 {0}
         run: |
           export GOROOT=/mingw64/lib/go
           export GOPATH=/mingw64
-          CGO_ENABLED=1 GOOS=windows GOARCH=amd64 go build -v -tags "cli" -ldflags "-s -w -X 'vencord/buildinfo.InstallerGitHash=$(git rev-parse --short HEAD)' -X 'vencord/buildinfo.InstallerTag=${{ github.ref_name }}'" -o EquilotlCli.exe
+          CGO_ENABLED=1 GOOS=windows GOARCH=amd64 go build -v -tags "cli" -ldflags "-s -w -X 'vencord/buildinfo.InstallerGitHash=$(git rev-parse --short HEAD)' -X 'vencord/buildinfo.InstallerTag=${{ github.ref_name }}'" -o PawsomeVencordInstallerCli.exe
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Equilotl-windows
+          name: PawsomeVencordInstaller-windows
           path: |
-            Equilotl.exe
-            EquilotlCli.exe
+            PawsomeVencordInstaller.exe
+            PawsomeVencordInstallerCli.exe
 
 
   release:
@@ -191,19 +191,19 @@ jobs:
       - name: "Download Linux Artifacts"
         uses: actions/download-artifact@v4
         with:
-          name: Equilotl-linux
+          name: PawsomeVencordInstaller-linux
           path: linux
 
       - name: "Download MacOS Artifacts"
         uses: actions/download-artifact@v4
         with:
-          name: Equilotl-macos
+          name: PawsomeVencordInstaller-macos
           path: macos
 
       - name: "Download Windows Artifacts"
         uses: actions/download-artifact@v4
         with:
-          name: Equilotl-windows
+          name: PawsomeVencordInstaller-windows
           path: windows
 
       - name: Create the release
@@ -216,9 +216,9 @@ jobs:
           prerelease: false
           draft: false
           body: |
-            This is release ${{ github.ref_name }} of Equilotl.
+            This is release ${{ github.ref_name }} of PawsomeVencordInstaller.
           files: |
-            linux/Equilotl-x11
-            linux/EquilotlCli-linux
-            macos/Equilotl.MacOS.zip
-            windows/Equilotl*.exe
+            linux/PawsomeVencordInstaller-x11
+            linux/PawsomeVencordInstallerCli-linux
+            macos/PawsomeVencordInstaller.MacOS.zip
+            windows/PawsomeVencordInstaller*.exe
