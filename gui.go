@@ -434,7 +434,7 @@ func renderInstaller() g.Widget {
 
 		g.Style().SetFontSize(20).To(
 			renderErrorCard(
-				DiscordYellow,
+				PawsomeINFO,
 				"**Github** is the only official places to get PawsomeVencord. Any other site claiming to be us is malicious.\n"+
 					"If you downloaded from any other source, you should delete / uninstall everything immediately, run a malware scan and change your Discord password.",
 				90,
