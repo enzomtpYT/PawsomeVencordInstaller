@@ -6,45 +6,24 @@ This Vencord Installer allows you to install [PawsomeVencord, a modification of 
 
 ## Usage
 
-### Windows
+Windows
 
-> **Warning**
-**Do not** run the installer as Admin
+- [GUI](https://github.com/enzomtpYT/PawsomeVencordInstaller/releases/latest/download/PawsomeVencordInstaller.exe)
+- [CLI](https://github.com/enzomtpYT/PawsomeVencordInstaller/releases/latest/download/PawsomeVencordInstallerCli.exe)
 
-Download [PawsomeVencordInstaller.exe](https://github.com/enzomtpYT/PawsomeVencordInstaller/releases/latest/download/PawsomeVencordInstaller.exe) and run it
+MacOS
 
-If the above doesn't work/open, for example because you're using Windows 7, 32 bit, or have a bad GPU, you can instead use our terminal based installer.
+- [X64 GUI](https://github.com/enzomtpYT/PawsomeVencordInstaller/releases/latest/download/PawsomeVencordInstaller-darwin-x64.zip)
+- [ARM64 GUI](https://github.com/enzomtpYT/PawsomeVencordInstaller/releases/latest/download/PawsomeVencordInstaller-darwin-arm64.zip)
 
-To do so, open Powershell, run the following command, then follow along with the instructions/prompts
+Linux
 
-```ps1
-iwr "https://raw.githubusercontent.com/enzomtpYT/PawsomeVencordInstaller/main/install.ps1" -UseBasicParsing | iex
-```
-
-### Linux
-
-**PLEASE MAKE SURE YOU HAVE ANY OTHER VERSION OF VENCORD REMOVED BEFORE INSTALLING PAWSOME, IT CAN CAUSE SOFT CRASHES, IF YOUR DISCORD DOESNT START REINSTALL IT THEN INSTALL PAWSOME AGAIN**
-(this is unconfirmed as it has only happened once so far, but I put it here incase you get the issue)
-
-Run the following command in your terminal and follow along with the instructions/prompts
-
-```sh
-sh -c "$(curl -sS https://raw.githubusercontent.com/enzomtpYT/PawsomeVencordInstaller/main/install.sh)"
-```
-
-### MacOs
-
-Download the latest [MacOs build](https://github.com/enzomtpYT/PawsomeVencordInstaller/releases/latest/download/PawsomeVencordInstaller.MacOS.zip), unzip it, and run `PawsomeVencordInstaller.app` 
-
-If you get a `PawsomeVencordInstaller can't be opened` warning, right-click `PawsomeVencordInstaller.app` and click open.
-
-This warning shows because the app isn't signed since I'm not willing to pay 100 bucks a year for an Apple Developer license.
-
-___
+- [GUI](https://github.com/enzomtpYT/PawsomeVencordInstaller/releases/latest/download/PawsomeVencordInstaller-x11)
+- [CLI](https://github.com/enzomtpYT/PawsomeVencordInstaller/releases/latest/download/PawsomeVencordInstallerCli-Linux)
 
 ## Building from source
 
-### Prerequisites 
+### Prerequisites
 
 You need to install the [Go programming language](https://go.dev/doc/install) and GCC, the GNU Compiler Collection (MinGW on Windows)
 
@@ -52,16 +31,19 @@ You need to install the [Go programming language](https://go.dev/doc/install) an
 <summary>Additionally, if you're using Linux, you have to install some additional dependencies:</summary>
 
 #### Base dependencies
+
 ```sh
 apt install -y pkg-config libsdl2-dev libglx-dev libgl1-mesa-dev
 ```
 
 #### X11 dependencies
+
 ```sh
 apt install -y xorg-dev
 ```
 
 #### Wayland dependencies
+
 ```sh
 apt install -y libwayland-dev libxkbcommon-dev wayland-protocols extra-cmake-modules
 ```
@@ -79,16 +61,19 @@ go mod tidy
 #### Build the GUI
 
 ##### Windows / Mac / Linux X11
+
 ```sh
 go build
 ```
 
 ##### Linux Wayland
+
 ```sh
 go build --tags wayland
 ```
 
 #### Build the CLI
+
 ```
 go build --tags cli
 ```
