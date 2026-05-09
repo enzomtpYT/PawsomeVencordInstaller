@@ -1,4 +1,6 @@
 PawsomeVencordInstaller
+vencord
 *.exe
 *.syso
 *.old
+vendor
