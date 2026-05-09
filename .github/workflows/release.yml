@@ -125,8 +125,8 @@ jobs:
         run: go get -v
 
       - name: Build GUI
-        run: CGO_CFLAGS="-mmacosx-version-min=10.15"
-          CGO_LDFLAGS="-mmacosx-version-min=10.15" CGO_ENABLED=1 GOOS=darwin
+        run: CGO_CFLAGS="-mmacosx-version-min=11.0"
+          CGO_LDFLAGS="-mmacosx-version-min=11.0" CGO_ENABLED=1 GOOS=darwin
           GOARCH=${{ matrix.arch }} go build -v -tags "static gui" -ldflags "-s
           -w -X 'PawsomeVencordInstaller/buildinfo.InstallerGitHash=$(git rev-parse --short
           HEAD)' -X 'PawsomeVencordInstaller/buildinfo.InstallerTag=${{ github.ref_name }}'" -o
