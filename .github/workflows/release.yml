@@ -90,7 +90,6 @@ jobs:
             PawsomeVencordInstallerCli-linux
 
   build-mac:
-    if: false
     runs-on: ${{ matrix.runner }}
 
     strategy:
