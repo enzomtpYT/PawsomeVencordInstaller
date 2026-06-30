@@ -82,14 +82,6 @@ func main() {
 		g.Update()
 	}()
 
-	var linuxFlags g.MasterWindowFlags = 0
-	if runtime.GOOS == "linux" {
-		os.Setenv("GDK_SCALE", "1")
-		os.Setenv("GDK_DPI_SCALE", "1")
-	}
-
-	win = g.NewMasterWindow("Equilotl", 1200, 800, linuxFlags)
-
 	icon, _, err := image.Decode(bytes.NewReader(iconBytes))
 	if err != nil {
 		Log.Warn("Failed to load application icon", err)
