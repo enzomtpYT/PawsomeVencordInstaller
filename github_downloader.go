@@ -60,8 +60,11 @@ func GetGithubRelease(url, fallbackUrl string) (*GithubRelease, error) {
 		triedFallback := url == fallbackUrl
 
 		if isRateLimitedOrBlocked && !triedFallback {
-			Log.Error(fmt.Sprintf("Failed to fetch %s (status code %d). Trying fallback url %s", url, res.StatusCode, fallbackUrl))
-			return GetGithubRelease(fallbackUrl, fallbackUrl)
+			Log.Error(fmt.Sprintf("Failed to fetch %s (status code %d)", url, res.StatusCode))
+			return nil,errors.New(res.Status)
+			//disable fallback as I am too lazy to do that
+			//fmt.Sprintf("Failed to fetch %s (status code %d). Trying fallback url %s", url, res.StatusCode, fallbackUrl))
+			//return GetGithubRelease(fallbackUrl, fallbackUrl)
 		}
 
 		err = errors.New(res.Status)
