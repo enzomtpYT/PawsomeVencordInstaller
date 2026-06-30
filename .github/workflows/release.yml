@@ -166,39 +166,39 @@ jobs:
           mv PawsomeVencordInstaller PawsomeVencordInstaller.app/Contents/MacOS/PawsomeVencordInstaller
           cp macos/icon.icns PawsomeVencordInstaller.app/Contents/Resources/icon.icns
 
-      - name: Import signing certificate
-        env:
-          CSC_LINK: ${{ secrets.APPLE_SIGNING_CERT }}
-          CSC_KEY_PASSWORD: ${{ secrets.APPLE_SIGNING_CERT_PASSWORD }}
-        run: |
-          echo "$CSC_LINK" | base64 --decode > certificate.p12
-          ls -la certificate.p12
-          security create-keychain -p "" build.keychain
-          security default-keychain -s build.keychain
-          security unlock-keychain -p "" build.keychain
-          security import certificate.p12 -k build.keychain -P "$CSC_KEY_PASSWORD" -T /usr/bin/codesign || (echo "Certificate import failed, trying with different flags" && security import certificate.p12 -k build.keychain -P "$CSC_KEY_PASSWORD" -T /usr/bin/codesign -A)
-          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "" build.keychain
-          rm certificate.p12
+      # - name: Import signing certificate
+      #   env:
+      #     CSC_LINK: ${{ secrets.APPLE_SIGNING_CERT }}
+      #     CSC_KEY_PASSWORD: ${{ secrets.APPLE_SIGNING_CERT_PASSWORD }}
+      #   run: |
+      #     echo "$CSC_LINK" | base64 --decode > certificate.p12
+      #     ls -la certificate.p12
+      #     security create-keychain -p "" build.keychain
+      #     security default-keychain -s build.keychain
+      #     security unlock-keychain -p "" build.keychain
+      #     security import certificate.p12 -k build.keychain -P "$CSC_KEY_PASSWORD" -T /usr/bin/codesign || (echo "Certificate import failed, trying with different flags" && security import certificate.p12 -k build.keychain -P "$CSC_KEY_PASSWORD" -T /usr/bin/codesign -A)
+      #     security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "" build.keychain
+      #     rm certificate.p12
 
-      - name: Sign the executables
-        run: |
-          codesign --force --options runtime --sign "Developer ID Application" PawsomeVencordInstaller.app/Contents/MacOS/PawsomeVencordInstaller
-          codesign --force --options runtime --sign "Developer ID Application" PawsomeVencordInstaller.app
-          codesign --force --options runtime --sign "Developer ID Application" ${{ matrix.cli_name }}
+      # - name: Sign the executables
+      #   run: |
+      #     codesign --force --options runtime --sign "Developer ID Application" PawsomeVencordInstaller.app/Contents/MacOS/PawsomeVencordInstaller
+      #     codesign --force --options runtime --sign "Developer ID Application" PawsomeVencordInstaller.app
+      #     codesign --force --options runtime --sign "Developer ID Application" ${{ matrix.cli_name }}
 
-      - name: Notarize the executables
-        env:
-          API_KEY: ${{ secrets.APPLE_API_KEY }}
-          APPLE_API_KEY_ID: ${{ secrets.APPLE_API_KEY_ID }}
-          APPLE_API_ISSUER: ${{ secrets.APPLE_API_ISSUER }}
-        run: |
-          echo "$API_KEY" > apple.p8
-          ditto -c -k --keepParent PawsomeVencordInstaller.app PawsomeVencordInstaller-notarize.zip
-          ditto -c -k ${{ matrix.cli_name }} PawsomeVencordInstallerCli-notarize.zip
-          xcrun notarytool submit PawsomeVencordInstaller-notarize.zip --key apple.p8 --key-id "$APPLE_API_KEY_ID" --issuer "$APPLE_API_ISSUER" --wait
-          xcrun stapler staple PawsomeVencordInstaller.app
-          xcrun notarytool submit PawsomeVencordInstallerCli-notarize.zip --key apple.p8 --key-id "$APPLE_API_KEY_ID" --issuer "$APPLE_API_ISSUER" --wait
-          rm apple.p8 PawsomeVencordInstaller-notarize.zip PawsomeVencordInstallerCli-notarize.zip
+      # - name: Notarize the executables
+      #   env:
+      #     API_KEY: ${{ secrets.APPLE_API_KEY }}
+      #     APPLE_API_KEY_ID: ${{ secrets.APPLE_API_KEY_ID }}
+      #     APPLE_API_ISSUER: ${{ secrets.APPLE_API_ISSUER }}
+      #   run: |
+      #     echo "$API_KEY" > apple.p8
+      #     ditto -c -k --keepParent PawsomeVencordInstaller.app PawsomeVencordInstaller-notarize.zip
+      #     ditto -c -k ${{ matrix.cli_name }} PawsomeVencordInstallerCli-notarize.zip
+      #     xcrun notarytool submit PawsomeVencordInstaller-notarize.zip --key apple.p8 --key-id "$APPLE_API_KEY_ID" --issuer "$APPLE_API_ISSUER" --wait
+      #     xcrun stapler staple PawsomeVencordInstaller.app
+      #     xcrun notarytool submit PawsomeVencordInstallerCli-notarize.zip --key apple.p8 --key-id "$APPLE_API_KEY_ID" --issuer "$APPLE_API_ISSUER" --wait
+      #     rm apple.p8 PawsomeVencordInstaller-notarize.zip PawsomeVencordInstallerCli-notarize.zip
 
       - name: Create final zip
         run: zip -r ${{ matrix.zip_name }} PawsomeVencordInstaller.app
