@@ -200,7 +200,7 @@ jobs:
       #     rm apple.p8 PawsomeVencordInstaller-notarize.zip PawsomeVencordInstallerCli-notarize.zip
 
       - name: Create final zip
-        run: zip -r ${{ matrix.zip_name }} PawsomeVencordInstaller.app
+        run: zip -r ${{ matrix.gui_name }} PawsomeVencordInstaller.app
 
       - name: Upload artifact
         uses: actions/upload-artifact@v7
