@@ -18,7 +18,12 @@ echo "Downloading Installer..."
 
 set -- "XDG_CONFIG_HOME=$XDG_CONFIG_HOME"
 
-curl -sS https://github.com/enzomtpYT/PawsomeVencordInstaller/releases/latest/download/PawsomeVencordInstallerCli-Linux \
+case "$(uname -m)" in
+  aarch64|arm64) binary="PawsomeVencordInstallerCli-linux-arm64" ;;
+  *) binary="PawsomeVencordInstallerCli-linux" ;;
+esac
+
+curl -sS "https://github.com/enzomtpYT/PawsomeVencordInstaller/releases/latest/download/$binary" \
   --output "$outfile" \
   --location \
   --fail

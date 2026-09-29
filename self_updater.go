@@ -7,7 +7,7 @@
 package main
 
 import (
-	"equilotl/buildinfo"
+	"PawsomeVencordInstaller/buildinfo"
 	"errors"
 	"fmt"
 	"io"
@@ -49,18 +49,24 @@ func GetInstallerDownloadLink() string {
 	const BaseUrl = "https://github.com/enzomtpYT/PawsomeVencordInstaller/releases/latest/download/"
 	switch runtime.GOOS {
 	case "windows":
-		filename := Ternary(buildinfo.UiType == buildinfo.UiTypeCli, "PawsomeVencordInstallerCli.exe", "PawsomeVencordInstaller.exe")
-		return BaseUrl + filename
+		filename := Ternary(buildinfo.UiType == buildinfo.UiTypeCli, "PawsomeVencordInstallerCli", "PawsomeVencordInstaller")
+		if runtime.GOARCH == "arm64" {
+			filename += "-arm64"
+		}
+		return BaseUrl + filename + ".exe"
 	case "darwin":
 		switch runtime.GOARCH {
 		case "amd64":
-			return BaseUrl + "PawsomeVencordInstaller-darwin-x64.zip"
+			return BaseUrl + "PawsomeVencordInstaller-x64.dmg"
 		case "arm64":
-			return BaseUrl + "PawsomeVencordInstaller-darwin-arm64.zip"
+			return BaseUrl + "PawsomeVencordInstaller-arm64.dmg"
 		default:
 			return ""
 		}
 	case "linux":
+		if runtime.GOARCH == "arm64" {
+			return BaseUrl + "PawsomeVencordInstallerCli-linux-arm64"
+		}
 		return BaseUrl + "PawsomeVencordInstallerCli-linux"
 	default:
 		return ""

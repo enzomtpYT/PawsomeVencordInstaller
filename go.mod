@@ -1,4 +1,4 @@
-module equilotl
+module PawsomeVencordInstaller
 
 go 1.26.2
 
